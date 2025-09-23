@@ -2307,28 +2307,6 @@ body {
   }
 }
 
-/* Simple main content styling */
-.main-content {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #f8f9fa;
-}
-
-.main-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #333;
-  font-weight: 700;
-}
-
-.main-content p {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 600px;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -2338,13 +2316,7 @@ body {
     border-width: 3px;
   }
 
-  .main-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .main-content p {
-    font-size: 1.1rem;
-  }
+ 
 }
 
 @media (max-width: 480px) {
@@ -2353,11 +2325,5 @@ body {
     height: 40px;
   }
 
-  .main-content h1 {
-    font-size: 2rem;
-  }
 
-  .main-content p {
-    font-size: 1rem;
-  }
 }
