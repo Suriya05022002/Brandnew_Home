@@ -756,3 +756,82 @@ function initLoadingScreen() {
     }, 500) // 2 second minimum display time
   })
 }
+
+
+// Counter Animation
+
+const counters = document.querySelectorAll('.stat-box h3');
+const speed = 1000;
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        const increment = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 10);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCount();
+});
+
+// Progress Circle Animation
+const progressCircles = document.querySelectorAll('.progress-circle');
+
+progressCircles.forEach(circle => {
+    const progress = +circle.getAttribute('data-progress');
+    let currentProgress = 0;
+    const speed = 100; // The higher the slower
+
+    const updateProgress = () => {
+        if (currentProgress < progress) {
+            currentProgress++;
+            circle.style.background = `conic-gradient(#0288d1 ${currentProgress * 3.6}deg, #b3e5fc ${currentProgress * 3.6}deg)`;
+            circle.innerHTML = currentProgress + '%';
+            setTimeout(updateProgress, speed);
+        } else {
+            circle.innerHTML = progress + '%';
+        }
+    };
+
+    updateProgress();
+});
+
+   $(document).ready(function(){
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover:false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    }, 
+                    {
+                        breakpoint: 520,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 470,
+                        settings: {
+                            slidesToShow:2 // Ensure 2 slides are shown on screens 480px or below
+                        }
+                    }
+                ]
+            });
+        });
+        
