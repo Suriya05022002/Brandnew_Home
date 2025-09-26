@@ -274,13 +274,17 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  position: relative;
   overflow: hidden;
-  padding-top: 80px;
-  background: var(--gradient-hero);
+  padding: var(--space-20) 0 var(--space-16);
+  /* background: var(--gradient-hero); */
+
+  background-color: #c7e9f0;
+
+  /* background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); */
 }
 
 .hero-bg {
@@ -314,13 +318,16 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: center;
+  z-index: 2;
 }
 
 .hero-text {
-  color: var(--white);
+  color: var(--black);
+  order: 1; /* Keep text on the right */
 }
 
 .hero-badge {
+  
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -374,10 +381,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  order: -1; /* Move visual to the left */
 }
 
 .hero-image-container {
   position: relative;
+  padding-bottom: 210px;
 }
 
 .hero-image {
@@ -386,7 +395,7 @@ body {
   height: auto;
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-2xl);
-  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+
   transition: all var(--transition-slow);
   border: 4px solid rgba(255, 255, 255, 0.2);
 }
@@ -578,7 +587,6 @@ body {
 }
 
 .about-content {
-
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: start;
@@ -2020,6 +2028,8 @@ body {
     max-width: 90%;
     transform: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
+  
+ 
   }
 
   .hero-image:hover {
@@ -2260,8 +2270,6 @@ body {
   }
 }
 
-
-
 /* Updated loading screen to match the blue gradient from the image */
 .loading-screen {
   position: fixed;
@@ -2307,16 +2315,13 @@ body {
   }
 }
 
-
-/* Responsive Design */
+/* Media queries for tablet */
 @media (max-width: 768px) {
   .spinner {
     width: 50px;
     height: 50px;
     border-width: 3px;
   }
-
- 
 }
 
 @media (max-width: 480px) {
@@ -2324,130 +2329,128 @@ body {
     width: 40px;
     height: 40px;
   }
-
-
 }
 
 .subscribed-learners {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #b2ebf2; /* Light blue background for section */
-    font-family: 'Work Sans'
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #b2ebf2; /* Light blue background for section */
+  font-family: "Work Sans";
 }
 
 /* Stats and Progress Containers */
 .stats-container,
 .progress-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
 /* Stat and Progress Boxes */
 .stat-box,
 .progress-box {
-    background-color: #ffffff; /* White background for boxes */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 200px;
-    max-width: 300px;
-    text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+  background-color: #ffffff; /* White background for boxes */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 200px;
+  max-width: 300px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Hover Effect for Stat and Progress Boxes */
 .stat-box:hover,
 .progress-box:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge the box on hover */
 }
 
 /* Stat Box Headings */
 .stat-box h3 {
-    font-size: 2em;
-    color: #0288d1; /* Blue color for headings */
+  font-size: 2em;
+  color: #0288d1; /* Blue color for headings */
 }
 
 /* Progress Circle Styles */
 .progress-circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: conic-gradient(#13567a 0%, #b3e5fc 0%); 
-     /* Blue gradient */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: black;
-    margin: 0 auto 10px;
-    transition: background- 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#13567a 0%, #b3e5fc 0%);
+  /* Blue gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: black;
+  margin: 0 auto 10px;
+  transition: background- 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 /* Hover Effect for Progress Circle */
 .progress-circle:hover {
-    background: conic-gradient(#0277bd 0%, #e1f5fe 0%); /* Darker blue gradient on hover */
-    transform: scale(1.1); /* Slightly enlarge the circle on hover */
+  background: conic-gradient(#0277bd 0%, #e1f5fe 0%); /* Darker blue gradient on hover */
+  transform: scale(1.1); /* Slightly enlarge the circle on hover */
 }
 
 /* Progress Circle Colors Based on Data Progress */
 .progress-circle[data-progress="72"] {
-    background: conic-gradient(#0288d1 0% 72%, #b3e5fc 72%); /* Dark blue to light blue */
-    color: white;
+  background: conic-gradient(#0288d1 0% 72%, #b3e5fc 72%); /* Dark blue to light blue */
+  color: white;
 }
 
 .progress-circle[data-progress="78"] {
-    background: conic-gradient(#0288d1 0% 78%, #b3e5fc 78%); /* Dark blue to light blue */
-    color: white;
+  background: conic-gradient(#0288d1 0% 78%, #b3e5fc 78%); /* Dark blue to light blue */
+  color: white;
 }
 
 .progress-circle[data-progress="84"] {
-    background: conic-gradient(#0288d1 0% 84%, #b3e5fc 84%); /* Dark blue to light blue */
-    color: white;
+  background: conic-gradient(#0288d1 0% 84%, #b3e5fc 84%); /* Dark blue to light blue */
+  color: white;
 }
 
 /* Media queries for tablet */
 @media (max-width: 768px) {
-    .stats-container,
-    .progress-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .stats-container,
+  .progress-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .stat-box,
-    .progress-box {
-        max-width: 80%;
-    }
+  .stat-box,
+  .progress-box {
+    max-width: 80%;
+  }
 }
 
 /* Media queries for mobile */
 @media (max-width: 480px) {
-    .stats-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Adjusted to equal columns for mobile */
-        grid-gap: 20px;
-    }
+  .stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Adjusted to equal columns for mobile */
+    grid-gap: 20px;
+  }
 
-    .stat-box,
-    .progress-box {
-        max-width: 100%;
-        margin: 10px 0;
-    }
+  .stat-box,
+  .progress-box {
+    max-width: 100%;
+    margin: 10px 0;
+  }
 
-    .progress-circle {
-        width: 80px;
-        height: 80px;
-        line-height: 80px;
-        font-size: 1.5em;
-    }
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 1.5em;
+  }
 
-    .stat-box h3,
-    .progress-box .progress-circle {
-        font-size: 1.5em;
-    }
+  .stat-box h3,
+  .progress-box .progress-circle {
+    font-size: 1.5em;
+  }
 }
 /* main container */
 .container1 {
@@ -2459,7 +2462,7 @@ body {
 .section-title {
   font-size: 30px;
   text-align: center;
-  font-weight: 700;       /* replaces font-weight-bold */
+  font-weight: 700; /* replaces font-weight-bold */
   padding: 20px 0;
   margin: 0;
 }
@@ -2479,11 +2482,10 @@ body {
 /* slides */
 .slide {
   flex: 0 0 auto;
-  
 }
 
 .slide img {
-  width: 100%;
+  width: 70%;
   display: block;
 }
 
@@ -2523,3 +2525,255 @@ body {
 .copy {
   padding-top: 250px;
 }
+
+.subscribe-btn {
+  background: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background: #1565c0;
+}
+
+.login-btn {
+  background: #1976d2;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+
+.login-btn:hover {
+  background: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+}
+
+/* Progress Section */
+.progress-section {
+  
+  width: 100%;
+  padding: 40px;
+  border-radius: 15px;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+}
+
+.progress-item {
+  margin-bottom: 30px;
+}
+
+.progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progress-label span {
+  font-weight: 600;
+  color: #333;
+}
+
+.progress-percentage {
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 2s ease-in-out;
+  position: relative;
+}
+/* Common animation keyframes */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Technical – vibrant blue/purple */
+.progress-fill.technical {
+  background: linear-gradient(270deg, #3b82f6, #6366f1, #60a5fa);
+  background-size: 300% 300%;
+  animation: gradientMove 4s ease infinite;
+}
+
+/* Programming – teal to bright aqua */
+.progress-fill.programming {
+  background: linear-gradient(270deg, #06b6d4, #22d3ee, #67e8f9);
+  background-size: 300% 300%;
+  animation: gradientMove 4s ease infinite;
+}
+
+/* Interview – violet to pink glow */
+.progress-fill.interview {
+  background: linear-gradient(270deg, #a855f7, #d946ef, #a78bfa);
+  background-size: 300% 300%;
+  animation: gradientMove 4s ease infinite;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .progress-section {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .nav-menu {
+    gap: 10px;
+  }
+
+  .nav-menu li a {
+    font-size: 14px;
+  }
+}
+
+.ticker {
+  
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 60px;
+  margin: 0 auto;
+  padding-left: 6px;
+}
+.news {
+  width: 76%;
+  background-color: white;
+  padding: 0 2%;
+  color: #c81c1c;
+}
+.title {
+  width: 22%;
+  text-align: center;
+  background: #c81c1c;
+  position: relative;
+  color: white;
+}
+.title:after {
+  position: absolute;
+  content: "";
+  right: -16%;
+  /* border-left: 20px solid #c81c1c;
+  border-top: 33px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 33px solid transparent; */
+  top: 0;
+}
+.title h5 {
+  font-size: 18px;
+  margin: 8% 0;
+  
+}
+.news marquee {
+  font-size: 22px;
+  padding-top: 15px;
+}
+
+@media (max-width: 480px) {
+  .ticker {
+    width: 100%;
+    height: auto; /* Adjust height to fit content */
+    flex-direction: row; /* Keep elements side by side */
+  }
+
+  .news {
+    width: 75%; /* Slightly reduced width to make space for the title */
+    padding: 0 2%;
+    font-size: 14px; /* Adjust font size for readability */
+  }
+
+  .title {
+    text-align: center; /* Keep title centered */
+  }
+
+  .title h5 {
+    font-size: 16px; /* Adjust font size for readability */
+    margin: 5% 0; /* Adjusted margin */
+  }
+
+  .title:after {
+    display: none; /* Hide the arrow shape for a cleaner look on small screens */
+  }
+
+  .news marquee {
+    font-size: 14px; /* Adjust font size */
+  }
+}
+/* Tighten spacing further on small phones */
+  .hero {
+    min-height: auto; /* override earlier 90vh */
+    padding: var(--space-6) 0 var(--space-6); /* reduce vertical padding */
+  }
+  .hero-content {
+    padding: 10; /* prevent extra inner spacing */
+    gap: var(--space-6);
+  }
+  .hero-image-container {
+    padding-bottom: 0;
+    padding-top: 20px; /* ensure no extra space below image */
+  }
+  .hero-image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
