@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhanced-animations.css">
 </head>
 <style>
         * {
@@ -354,6 +355,7 @@
                 font-size: 1rem;
             }
         }
+        
     </style>
 <body>
    
@@ -431,15 +433,48 @@
                         Master job-relevant tech in just 40 hours per course — without wasting years in college.
                     </p>
                     
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large" onclick="scrollToSection('courses')">
+                    <!-- <div class="hero-buttons"> -->
+                        <!-- <button class="btn btn-primary btn-large" onclick="scrollToSection('courses')">
                             <i class="fas fa-play"></i>
                             Start Learning Now
                         </button>
                         <button class="btn btn-secondary btn-large" onclick="scrollToSection('testimonials')">
                             <i class="fas fa-star"></i>
                             Success Stories
-                        </button>
+                        </button> -->
+                         
+                        <div class="progress-section fade-in">
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Technical Articles and Courses</span>
+                    <span class="progress-percentage">96%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill technical" data-width="96"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Programming Languages</span>
+                    <span class="progress-percentage">98%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill programming" data-width="98"></div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Interview Preparation</span>
+                    <span class="progress-percentage">98%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill interview" data-width="98"></div>
+                </div>
+            </div>
+        <!-- </div> -->
+  
                     </div>
                 </div>
                 
@@ -449,12 +484,30 @@
                         <div class="hero-image-overlay"></div>
                     </div>
                 </div>
-            </div>
         </div>
-    </section>
+         </section>
+        
+    <!-- Breaking News -->
 
-    <!-- Problem Section -->
     <section class="problem-section" id="problem">
+        <div class="container2">
+      <div class="ticker">
+        <div class="title"><h5>Breaking News</h5></div>
+        <div class="news">
+          <marquee>
+            <p>
+                "Quarterly earnings report released today.",
+                "New product launch scheduled for next month.",
+                "CEO announces new strategic initiatives.",
+                "Company awarded Best Workplace 2024.",
+                "Upcoming company-wide meeting next Friday."
+          </p>
+          </marquee>
+        </div>
+      </div>
+    </div>
+
+    
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">The Harsh Reality</h2>
@@ -500,20 +553,20 @@
     </section>
 
    
-  <!-- learners working company -->
+<!-- learners working company -->
 <div class="container1">
   <h2 class="section-title">Our Learners work at</h2>
   <section class="customer-logos slider">
-    <div class="slide"><img src="images/adidas.png" alt="Adidas logo"></div>
-    <div class="slide"><img src="images/facebook.png" alt="Facebook logo"></div>
-    <div class="slide"><img src="images/google.png" alt="Google logo"></div>
-    <div class="slide"><img src="images/instagram.png" alt="Instagram logo"></div>
-    <div class="slide"><img src="images/nike.png" alt="Nike logo"></div>
-    <div class="slide"><img src="images/twitter.png" alt="Twitter logo"></div>
-    <div class="slide"><img src="images/uber.png" alt="Uber logo"></div>
-    <div class="slide"><img src="images/youtube.png" alt="YouTube logo"></div>
+    <div class="slide"><img src="images/f5.png" alt="F5 company logo"></div>
+    <div class="slide"><img src="images/boa.png" alt="Bank of America logo"></div>
+    <div class="slide"><img src="images/kone.png" alt="KONE company logo"></div>
+    <div class="slide"><img src="images/walmart.png" alt="Walmart logo"></div>
+    <div class="slide"><img src="images/WellsFargo.png" alt="Wells Fargo logo"></div>
+    <div class="slide"><img src="images/qualcomm.png" alt="Qualcomm logo"></div>
+    <div class="slide"><img src="images/Citibank.png" alt="Citibank logo"></div>
   </section>
 </div>
+
 
 
 <!--learners count-->
@@ -552,6 +605,7 @@
             </div>
         </div>
     </section>
+    
 
      <!-- Video Section with Grid Layout -->
     <section class="video-section">
@@ -1416,7 +1470,6 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script src="enhanced-interactions.js"></script>
 </body>
 </html>
-
-      
