@@ -805,7 +805,7 @@ progressCircles.forEach(circle => {
 
    $(document).ready(function(){
             $('.customer-logos').slick({
-                slidesToShow: 6,
+                slidesToShow: 5,
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 1500,
@@ -835,3 +835,54 @@ progressCircles.forEach(circle => {
             });
         });
         
+
+         // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Animate progress bars
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            progressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 500);
+            });
+        }
+
+        // Handle login button click
+        function handleLogin() {
+            alert('Redirecting to login page...');
+            // In a real application, you would redirect to the login page
+            // window.location.href = '/login';
+        }
+// Example company updates array
+const companyUpdates = [
+    "Quarterly earnings report released today.",
+    "New product launch scheduled for next month.",
+    "CEO announces new strategic initiatives.",
+    "Company awarded Best Workplace 2024.",
+    "Upcoming company-wide meeting next Friday."
+];
+
+// Get the marquee element
+const newsMarquee = document.getElementById('news-marquee');
+
+// Generate the news content by joining the items with a separator
+newsMarquee.innerHTML = companyUpdates.join(' - ');
+
+console.log("Company Flash News Page Loaded with important updates.");
+
+       
