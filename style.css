@@ -2761,10 +2761,7 @@ body {
   }
 }
 /* Tighten spacing further on small phones */
-  .hero {
-    min-height: auto; /* override earlier 90vh */
-    padding: var(--space-6) 0 var(--space-6); /* reduce vertical padding */
-  }
+ 
   .hero-content {
     padding: 10; /* prevent extra inner spacing */
     gap: var(--space-6);
@@ -2777,3 +2774,4 @@ body {
     max-width: 100%;
     margin: 0 auto;
   }
+
